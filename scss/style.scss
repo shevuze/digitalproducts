@@ -1,0 +1,322 @@
+@import "normalize";
+@import "layout";
+@import "slick";
+
+@font-face {
+    font-family: ProximaNova;
+    src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.eot);
+    src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.eot?#iefix) format("embedded-opentype"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.woff2) format("woff2"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.woff) format("woff"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.ttf) format("truetype"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.svg#wf) format("svg");
+    font-weight: 300;
+    font-style: normal
+  }
+  
+  @font-face {
+    font-family: ProximaNova;
+    src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.eot);
+    src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.eot?#iefix) format("embedded-opentype"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.woff2) format("woff2"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.woff) format("woff"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.ttf) format("truetype"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.svg#wf) format("svg");
+    font-weight: 400;
+    font-style: normal
+  }
+  
+  @font-face {
+    font-family: ProximaNova;
+    src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.eot);
+    src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.eot?#iefix) format("embedded-opentype"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.woff2) format("woff2"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.woff) format("woff"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.ttf) format("truetype"),url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.svg#wf) format("svg");
+    font-weight: 700;
+    font-style: normal
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700i');
+
+$bg-color: #E9E9E9;
+$text-color: #665f60;
+$primary-text-color: #fff;
+$bp-small: 640px;
+$bp-medium: 960px;
+$bp-large: 1024px;
+$bp-xlarge: 1200px;
+
+
+body{
+    font: 400 20px/1.2 "ProximaNova", sans-serif;
+    color: $text-color;
+    background: $bg-color;
+}
+/* Layout */
+.ba-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1170px;
+}
+
+.ba-container-l {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, {
+    margin: 0;
+}
+
+a,
+input[type="submit"],
+input[type="button"],
+button{
+    -webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+    -moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+    transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+    text-decoration: none;
+}
+
+
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button{
+    display: inline-block;
+    color: $text-color;
+    border: 1px solid #7D7A7C;
+    padding: 15px 50px;
+    &:hover {
+        color: $primary-text-color;
+        border-color: $primary-text-color;
+        background: #7D7A7C;
+    }
+    
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.ba-button:hover{
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+    -webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+    -moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+    transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+.ba-intro {
+    background: #ABA6C1 url(../img/hero-bg.jpg) 50% no-repeat;
+    background-size: cover;
+    padding-top: 36px;
+    color: $primary-text-color;
+    margin-bottom: 124px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        
+        .ba-nav {
+            display: flex;
+            list-style: none;
+            font-weight: 400;
+            font-size: 24px;
+            
+            a {
+                color: $primary-text-color;
+                margin-left: 26px;
+                &:hover {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+    &__info {
+        text-align: center;
+        font-size: 30px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding-top: 276px;
+        padding-bottom: 500px;
+        
+        p {
+            font-style: italic;
+        }
+    }
+
+    &__title {
+        font-size: 72px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
+
+//ABOUT
+
+.ba-section-about {
+    display: flex;
+    margin-bottom: 120px;
+    &__name {
+        background: #C1BAD6 url(../img/about-bg.jpg) 50% no-repeat;
+        background-size: cover;
+        text-align: center;
+        height: 100%;
+        padding-top: 75px;
+    }
+    &__title {
+        color: $primary-text-color;
+        font-size: 36px;
+        text-transform: uppercase;
+        padding-top: 40px;
+        font-weight: 500;
+    }
+    &__content {
+        padding: 50px 30px 100px 125px;
+        .ba-button {
+            margin-top: 70px;
+            margin-left: 33%;
+        }
+    }
+}
+
+//SERVICES 
+
+.ba-section-services {
+    display: flex;
+    p {
+        font-family: "PT Sans", sans-serif;
+        font-style: italic;
+        font-size: 18px;
+    }
+    
+    .ba-col-8 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__name {
+        background: #C2BFDA url(../img/laptop.jpg) 50% no-repeat;
+        background-size: cover;
+        padding-top: 116px;
+        color: $primary-text-color;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        height: 100%;
+    
+    }
+    &__box {
+        width: 50%;
+        background: #DBDBDB;
+        padding: 99px 30px 130px;
+        text-align: center;
+        img {
+            padding-bottom: 28px;
+        }
+    }
+    &__box--light {
+        background: $bg-color;
+    }
+}
+
+//WORKS 
+
+.ba-section-works {
+    background: #B7B5D9 url(../img/works-bg.jpg) 50% no-repeat;
+    background-size: cover;
+    padding-top: 49px;
+    padding-bottom: 50px;
+    position: relative;
+
+    &__top {
+        text-align: center;
+        margin-bottom: 66px;
+    }
+
+    &__title {
+        color: $primary-text-color;
+        font-size: 36px;
+        font-weight: 500;
+        padding-top: 30px;
+    }
+
+
+    .ba-slider {
+        max-width: 730px;
+        margin: 0 auto;
+        img {
+            width: 100%;
+        }
+    }
+    .slick-prev {
+        position: absolute;
+        top: 50%;
+        left: -180px;
+        opacity: .6;
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+    .slick-next {
+        position: absolute;
+        top: 50%;
+        right: -180px;
+        opacity: .6;
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+    .slick-dots {
+        display: flex;
+        justify-content: space-between;
+        max-width: 100px;
+        list-style: none;
+        margin: 30px auto 0;
+
+    
+        button{
+
+            width: 10px;
+            height: 10px;
+            border: solid 2px #fff;
+            border-radius: 50%;
+            font-size: 0;
+            padding: 0;
+            background: none;
+            margin-bottom: 40px;
+            &:hover, &focus {
+                opacity: .6;
+            }
+        }
+        .slick-active {
+            button{
+                background: $primary-text-color;
+            }
+        }
+    }
+    .ba-button {
+        margin-left: 42.5%;
+        color: #fff;
+        border-color: #fff;
+    }
+}
+
+//FOOTER
+
+.ba-footer {
+    background: #9F9ACF;
+    padding-top: 70px;
+    padding-bottom: 60px;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ba-copyright {
+        margin: 0;
+        color: $primary-text-color;
+        opacity: .8;
+    }
+}
+.ba-social-icon {
+    margin-left: 26px;
+}
